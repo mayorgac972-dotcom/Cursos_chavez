@@ -1,0 +1,151 @@
+/* Estilos generales de la página */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #ffffff;
+  color: #1a1a1a;
+  margin: 20px auto;
+  padding: 0 20px;
+  max-width: 900px;
+  line-height: 1.5;
+}
+
+/* Encabezados y enlaces */
+h1, h2, h3 {
+  color: #0b4f6c;
+  border-bottom: 2px solid #000000;
+  padding-bottom: 5px;
+  margin-top: 25px;
+}
+
+a {
+  color: #0066cc;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: #003366;
+}
+
+/* Listas */
+ul, ol, dl {
+  background-color: #f0f8ff; /* Azul muy claro */
+  border: 1px solid #000000;
+  padding: 15px 15px 15px 35px;
+  border-radius: 6px;
+}
+
+dt {
+  font-weight: bold;
+  color: #004080;
+  margin-top: 5px;
+}
+
+dd {
+  margin-left: 15px;
+  margin-bottom: 10px;
+}
+
+/* Tablas */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #ffffff;
+  border: 2px solid #000000;
+  margin: 20px 0;
+}
+
+th {
+  background-color: #e6f2ff; /* Azul claro para encabezados */
+  color: #000000;
+  border: 1px solid #000000;
+  padding: 10px;
+  text-align: left;
+}
+
+td {
+  border: 1px solid #000000;
+  padding: 8px;
+}
+
+caption {
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #003366;
+}
+
+/* Formularios y Controles */
+form {
+  background-color: #e6f2ff; /* Fondo azul claro para los formularios */
+  border: 2px solid #000000;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+fieldset {
+  border: 2px solid #000000;
+  background-color: #ffffff;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 6px;
+}
+
+legend {
+  font-weight: bold;
+  background-color: #bae0ff; /* Azul claro para resaltar el título */
+  border: 1px solid #000000;
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="int"],
+input[type="file"],
+select,
+textarea {
+  background-color: #ffffff;
+  border: 1px solid #000000;
+  padding: 6px;
+  border-radius: 4px;
+  margin: 5px 0 10px 0;
+  box-sizing: border-box;
+}
+
+input[type="text"]:focus,
+input[type="password"],
+select:focus,
+textarea:focus {
+  outline: 2px solid #0066cc;
+}
+
+/* Botones */
+input[type="submit"],
+input[type="reset"],
+button {
+  background-color: #bae0ff; /* Azul claro */
+  color: #000000;
+  border: 2px solid #000000;
+  padding: 8px 16px;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+button:hover {
+  background-color: #80c1ff; /* Azul un poco más oscuro al pasar el ratón */
+}
+
+/* Imágenes */
+img {
+  max-width: 100%;
+  height: auto;
+  border: 1px solid #000000;
+  border-radius: 4px;
+  vertical-align: middle;
+}

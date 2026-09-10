@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Menú de Ejercicios JavaScript</title>
+</head>
+<body>
+
+  <script>
+    var opcion = parseInt(prompt(
+      "MENÚ DE EJERCICIOS:\n\n" +
+      "1. Perímetro de un cuadrado\n" +
+      "2. Suma (1º y 2º) y Producto (3º y 4º)\n" +
+      "3. Suma y producto de 4 valores\n" +
+      "4. Total a abonar por artículos\n" +
+      "5. Promedio de notas\n" +
+      "6. Operaciones según el mayor de dos números\n" +
+      "7. Mayor de tres números (estructuras anidadas)\n" +
+      "8. Mayor de tres números (operador &&)\n" +
+      "9. Determinar si un número es positivo, cero o negativo\n" +
+      "10. Cantidad de cifras de un número (1 a 3)\n" +
+      "11. Nivel de capacitación del postulante\n" +
+      "12. Verificar si la fecha es Navidad\n" +
+      "13. Multiplicar suma si 3 valores son iguales\n" +
+      "14. Verificar si 3 números son menores a 10\n" +
+      "15. Determinar el cuadrante de un punto (X, Y)\n" +
+      "16. Calcular sueldo según antigüedad\n" +
+      "17. Verificar si al menos un número es menor a 10\n" +
+      "18. Traducir palabras (casa, mesa, perro, gato)\n" +
+      "19. Imprimir 25 términos de la serie (11, 22, 33...)\n" +
+      "20. Mostrar múltiplos de 8 hasta 500\n" +
+      "21. Contar notas (mayores/iguales a 7 y menores)\n" +
+      "22. Calcular promedio de 5 alturas\n" +
+      "23. Reporte de sueldos y gastos de la empresa\n" +
+      "24. Imprimir 20 términos de la serie (5, 10, 15...)\n" +
+      "25. Mostrar múltiplos de 10 hasta 1500\n" +
+      "26. Comparar el acumulado de dos listas de 3 valores\n" +
+      "27. Contar números pares e impares de 5 valores\n\n" +
+      "Ingrese el número del ejercicio a ejecutar:"
+    ));
+
+    if (opcion === 1) {
+      var lado = parseInt(prompt("Ingrese el valor del lado del cuadrado:"));
+      var perimetro = lado * 4;
+      document.write("El perímetro del cuadrado es: " + perimetro);
+    } 
+    else if (opcion === 2) {
+      var num1 = parseInt(prompt("Ingrese el primer número:"));
+      var num2 = parseInt(prompt("Ingrese el segundo número:"));
+      var num3 = parseInt(prompt("Ingrese el tercer número:"));
+      var num4 = parseInt(prompt("Ingrese el cuarto número:"));
+      var sumaDosPrimeros = num1 + num2;
+      var productoTerceroCuarto = num3 * num4;
+      document.write("Suma de los dos primeros: " + sumaDosPrimeros + "<br>");
+      document.write("Producto del tercero y cuarto: " + productoTerceroCuarto);
+    } 
+    else if (opcion === 3) {
+      var v1 = parseInt(prompt("Ingrese el primer valor:"));
+      var v2 = parseInt(prompt("Ingrese el segundo valor:"));
+      var v3 = parseInt(prompt("Ingrese el tercer valor:"));
+      var v4 = parseInt(prompt("Ingrese el cuarto valor:"));
+      var sumaTotal = v1 + v2 + v3 + v4;
+      var productoTotal = v1 * v2 * v3 * v4;
+      document.write("Suma de los cuatro valores: " + sumaTotal + "<br>");
+      document.write("Producto de los cuatro valores: " + productoTotal);
+    } 
+    else if (opcion === 4) {
+      var precio = parseInt(prompt("Ingrese el precio del artículo:"));
+      var cantidad = parseInt(prompt("Ingrese la cantidad a llevar:"));
+      var totalAbonar = precio * cantidad;
+      document.write("Total a abonar: $" + totalAbonar);
+    } 
+    else if (opcion === 5) {
+      var nota1 = parseInt(prompt("Ingrese primera nota:"));
+      var nota2 = parseInt(prompt("Ingrese segunda nota:"));
+      var nota3 = parseInt(prompt("Ingrese tercera nota:"));
+      var suma = nota1 + nota2 + nota3;
+      var promedio = suma / 3;
+      if (promedio >= 7) {
+        document.write("Promocionado con promedio: " + promedio.toFixed(2));
+      } else {
+        document.write("Usted tiene que recuperar. Promedio: " + promedio.toFixed(2));
+      }
+    } 
+    else if (opcion === 6) {
+      var num1 = parseInt(prompt("Ingrese el primer número:"));
+      var num2 = parseInt(prompt("Ingrese el segundo número:"));
+      if (num1 > num2) {
+        var suma = num1 + num2;
+        var diferencia = num1 - num2;
+        document.write("La suma es: " + suma + "<br>");
+        document.write("La diferencia es: " + diferencia);
+      } else {
+        var producto = num1 * num2;
+        var division = num1 / num2;
+        document.write("El producto es: " + producto + "<br>");
+        document.write("La división es: " + division);
+      }
+    } 
+    else if (opcion === 7) {
+      var num1 = parseInt(prompt("Ingrese primer valor:"));
+      var num2 = parseInt(prompt("Ingrese segundo valor:"));
+      var num3 = parseInt(prompt("Ingrese tercer valor:"));
+      if (num1 > num2) {
+        if (num1 > num3) {
+          document.write("El mayor de los tres es: " + num1);
+        } else {
+          document.write("El mayor de los tres es: " + num3);
+        }
+      } else {
+        if (num2 > num3) {
+          document.write("El mayor de los tres es: " + num2);
+        } else {
+          document.write("El mayor de los tres es: " + num3);
+        }
+      }
+    } 
+    else if (opcion === 8) {
+      var num1 = parseInt(prompt("Ingrese el primer número:"));
+      var num2 = parseInt(prompt("Ingrese el segundo número:"));
+      var num3 = parseInt(prompt("Ingrese el tercer número:"));
+      if (num1 > num2 && num1 > num3) {
+        document.write("El mayor es: " + num1);
+      } else if (num2 > num3) {
+        document.write("El mayor es: " + num2);
+      } else {
+        document.write("El mayor es: " + num3);
+      }
+    } 
+    else if (opcion === 9) {
+      var numero = parseInt(prompt("Ingrese un valor entero:"));
+      if (numero > 0) {
+        document.write("El número es positivo.");
+      } else if (numero === 0) {
+        document.write("El número es cero.");
+      } else {
+        document.write("El número es negativo.");
+      }
+    } 
+    else if (opcion === 10) {
+      var valor = parseInt(prompt("Ingrese un número positivo de hasta tres cifras:"));
+      if (valor >= 1 && valor <= 9) {
+        document.write("El número tiene 1 cifra.");
+      } else if (valor >= 10 && valor <= 99) {
+        document.write("El número tiene 2 cifras.");
+      } else if (valor >= 100 && valor <= 999) {
+        document.write("El número tiene 3 cifras.");
+      } else {
+        document.write("El número ingresado no está en el rango permitido (1-999).");
+      }
+    } 
+    else if (opcion === 11) {
+      var nombre = prompt("Ingrese el nombre del postulante:");
+      var totalPreguntas = parseInt(prompt("Ingrese la cantidad total de preguntas:"));
+      var correctas = parseInt(prompt("Ingrese la cantidad de preguntas correctas:"));
+      var porcentaje = (correctas / totalPreguntas) * 100;
+
+      document.write("Postulante: " + nombre + "<br>");
+      document.write("Porcentaje obtenido: " + porcentaje.toFixed(1) + "%<br>");
+
+      if (porcentaje >= 90) {
+        document.write("Nivel: Superior");
+      } else if (porcentaje >= 75) {
+        document.write("Nivel: Medio");
+      } else if (porcentaje >= 50) {
+        document.write("Nivel: Regular");
+      } else {
+        document.write("Nivel: Fuera de nivel");
+      }
+    } 
+    else if (opcion === 12) {
+      var dia = parseInt(prompt("Ingrese el día:"));
+      var mes = parseInt(prompt("Ingrese el mes (1-12):"));
+      var anio = parseInt(prompt("Ingrese el año:"));
+      if (dia === 25 && mes === 12) {
+        document.write("La fecha ingresada corresponde a Navidad.");
+      } else {
+        document.write("La fecha ingresada NO es Navidad.");
+      }
+    } 
+    else if (opcion === 13) {
+      var v1 = parseInt(prompt("Ingrese el primer valor:"));
+      var v2 = parseInt(prompt("Ingrese el segundo valor:"));
+      var v3 = parseInt(prompt("Ingrese el tercer valor:"));
+      if (v1 === v2 && v2 === v3) {
+        var resultado = (v1 + v2) * v3;
+        document.write("Los tres valores son iguales. Resultado: " + resultado);
+      } else {
+        document.write("Los valores no son iguales.");
+      }
+    } 
+    else if (opcion === 14) {
+      var n1 = parseInt(prompt("Ingrese el primer número:"));
+      var n2 = parseInt(prompt("Ingrese el segundo número:"));
+      var n3 = parseInt(prompt("Ingrese el tercer número:"));
+      if (n1 < 10 && n2 < 10 && n3 < 10) {
+        document.write("Todos los números son menores a diez.");
+      } else {
+        document.write("Al menos uno de los números es mayor o igual a diez.");
+      }
+    } 
+    else if (opcion === 15) {
+      var x = parseInt(prompt("Ingrese la coordenada X:"));
+      var y = parseInt(prompt("Ingrese la coordenada Y:"));
+      if (x > 0 && y > 0) {
+        document.write("El punto se ubica en el 1º Cuadrante.");
+      } else if (x < 0 && y > 0) {
+        document.write("El punto se ubica en el 2º Cuadrante.");
+      } else if (x < 0 && y < 0) {
+        document.write("El punto se ubica en el 3º Cuadrante.");
+      } else if (x > 0 && y < 0) {
+        document.write("El punto se ubica en el 4º Cuadrante.");
+      } else {
+        document.write("El punto se encuentra sobre uno de los ejes.");
+      }
+    } 
+    else if (opcion === 16) {
+      var sueldo = parseFloat(prompt("Ingrese el sueldo del operario:"));
+      var antiguedad = parseInt(prompt("Ingrese los años de antigüedad:"));
+      if (sueldo < 500 && antiguedad >= 10) {
+        var sueldoAumentado = sueldo * 1.20;
+        document.write("Sueldo a pagar (aumento del 20%): $" + sueldoAumentado);
+      } else if (sueldo < 500 && antiguedad < 10) {
+        var sueldoAumentado = sueldo * 1.05;
+        document.write("Sueldo a pagar (aumento del 5%): $" + sueldoAumentado);
+      } else {
+        document.write("Sueldo a pagar (sin cambios): $" + sueldo);
+      }
+    } 
+    else if (opcion === 17) {
+      var num1 = parseInt(prompt("Ingrese el primer número:"));
+      var num2 = parseInt(prompt("Ingrese el segundo número:"));
+      var num3 = parseInt(prompt("Ingrese el tercer número:"));
+
+      if (num1 < 10 || num2 < 10 || num3 < 10) {
+        document.write("Alguno de los números es menor a diez");
+      } else {
+        document.write("Ninguno de los números es menor a diez");
+      }
+    } 
+    else if (opcion === 18) {
+      var palabra = prompt("Ingrese una de estas palabras (casa, mesa, perro, gato):");
+      if (palabra) {
+        palabra = palabra.toLowerCase();
+      }
+
+      if (palabra === "casa") {
+        document.write("house");
+      } else if (palabra === "mesa") {
+        document.write("table");
+      } else if (palabra === "perro") {
+        document.write("dog");
+      } else if (palabra === "gato") {
+        document.write("cat");
+      } else {
+        document.write("Palabra no válida. Debe ingresar: casa, mesa, perro o gato.");
+      }
+    } 
+    else if (opcion === 19) {
+      var termino = 11;
+      var contador = 1;
+      while (contador <= 25) {
+        document.write(termino);
+        if (contador < 25) {
+          document.write(" - ");
+        }
+        termino += 11;
+        contador++;
+      }
+    } 
+    else if (opcion === 20) {
+      var multiplo = 8;
+      while (multiplo <= 500) {
+        document.write(multiplo);
+        if (multiplo + 8 <= 500) {
+          document.write(" - ");
+        }
+        multiplo += 8;
+      }
+    } 
+    else if (opcion === 21) {
+      var contador = 1;
+      var altas = 0;
+      var bajas = 0;
+
+      while (contador <= 10) {
+        var nota = parseFloat(prompt("Ingrese la nota del alumno " + contador + ":"));
+        if (nota >= 7) {
+          altas++;
+        } else {
+          bajas++;
+        }
+        contador++;
+      }
+
+      document.write("Alumnos con notas mayores o iguales a 7: " + altas + "<br>");
+      document.write("Alumnos con notas menores a 7: " + bajas);
+    } 
+    else if (opcion === 22) {
+      var x = 1;
+      var sumaAlturas = 0;
+
+      while (x <= 5) {
+        var altura = parseFloat(prompt("Ingrese la altura de la persona " + x + ":"));
+        sumaAlturas += altura;
+        x++;
+      }
+
+      var promedio = sumaAlturas / 5;
+      document.write("La altura promedio de las personas es: " + promedio.toFixed(2));
+    } 
+    else if (opcion === 23) {
+      var i = 1;
+      var entre100y300 = 0;
+      var masDe300 = 0;
+      var gastoTotal = 0;
+
+      while (i <= 5) {
+        var sueldo = parseFloat(prompt("Ingrese el sueldo del empleado " + i + " ($100 - $500):"));
+        gastoTotal += sueldo;
+
+        if (sueldo >= 100 && sueldo <= 300) {
+          entre100y300++;
+        } else if (sueldo > 300) {
+          masDe300++;
+        }
+        i++;
+      }
+
+      document.write("Empleados que cobran entre $100 y $300: " + entre100y300 + "<br>");
+      document.write("Empleados que cobran más de $300: " + masDe300 + "<br>");
+      document.write("Gasto total de la empresa en sueldos: $" + gastoTotal);
+    } 
+    else if (opcion === 24) {
+      var termino = 5;
+      var c = 1;
+
+      while (c <= 20) {
+        document.write(termino);
+        if (c < 20) {
+          document.write(" - ");
+        }
+        termino += 5;
+        c++;
+      }
+    } 
+    else if (opcion === 25) {
+      var multiplo = 10;
+
+      while (multiplo <= 1500) {
+        document.write(multiplo);
+        if (multiplo + 10 <= 1500) {
+          document.write(" - ");
+        }
+        multiplo += 10;
+      }
+    } 
+    else if (opcion === 26) {
+      var sumaLista1 = 0;
+      var sumaLista2 = 0;
+      var k = 1;
+
+      while (k <= 3) {
+        var val1 = parseInt(prompt("Lista 1 - Ingrese el valor " + k + ":"));
+        sumaLista1 += val1;
+        k++;
+      }
+
+      k = 1;
+      while (k <= 3) {
+        var val2 = parseInt(prompt("Lista 2 - Ingrese el valor " + k + ":"));
+        sumaLista2 += val2;
+        k++;
+      }
+
+      if (sumaLista1 > sumaLista2) {
+        document.write("Lista 1 mayor");
+      } else if (sumaLista2 > sumaLista1) {
+        document.write("Lista 2 mayor");
+      } else {
+        document.write("Listas iguales");
+      }
+    } 
+    else if (opcion === 27) {
+      var j = 1;
+      var pares = 0;
+      var impares = 0;
+
+      while (j <= 5) {
+        var valor = parseInt(prompt("Ingrese el número entero " + j + ":"));
+        if (valor % 2 === 0) {
+          pares++;
+        } else {
+          impares++;
+        }
+        j++;
+      }
+
+      document.write("Cantidad de valores pares: " + pares + "<br>");
+      document.write("Cantidad de valores impares: " + impares);
+    } 
+    else {
+      document.write("Opción no válida. Por favor recargue la página e intente de nuevo.");
+    }
+  </script>
+  <script>
+    var opcion = parseInt(prompt(
+      "SELECCIONE EL EJERCICIO A EJECUTAR:\n\n" +
+      "1. Sumar valores hasta ingresar 9999 (determinar signo del total)\n" +
+      "2. Procesar cuentas corrientes de un banco\n" +
+      "3. Procesar datos de un censo provincial\n\n" +
+      "Ingrese el número del ejercicio:"
+    ));
+
+    if (opcion === 1) {
+      // Ejercicio 1: Acumular valores hasta ingresar 9999
+      var suma = 0;
+      var valor = parseInt(prompt("Ingrese un valor entero (9999 para finalizar):"));
+
+      while (valor !== 9999) {
+        suma += valor;
+        valor = parseInt(prompt("Ingrese otro valor entero (9999 para finalizar):"));
+      }
+
+      document.write("<h3>Resultado del Acumulador</h3>");
+      document.write("El valor acumulado total es: " + suma + "<br>");
+
+      if (suma === 0) {
+        document.write("El valor acumulado es igual a cero.");
+      } else if (suma > 0) {
+        document.write("El valor acumulado es mayor a cero.");
+      } else {
+        document.write("El valor acumulado es menor a cero.");
+      }
+    } 
+    else if (opcion === 2) {
+      // Ejercicio 2: Cuentas corrientes del banco
+      var totalSaldosAcreedores = 0;
+      var numCuenta = parseInt(prompt("Ingrese número de cuenta (valor negativo para finalizar):"));
+
+      document.write("<h3>Informe de Cuentas Corrientes</h3>");
+
+      while (numCuenta >= 0) {
+        var nombreCliente = prompt("Ingrese el nombre del cliente:");
+        var saldoActual = parseFloat(prompt("Ingrese el saldo actual de la cuenta:"));
+        var estado = "";
+
+        if (saldoActual > 0) {
+          estado = "Acreedor";
+          totalSaldosAcreedores += saldoActual;
+        } else if (saldoActual < 0) {
+          estado = "Deudor";
+        } else {
+          estado = "Nulo";
+        }
+
+        document.write("Cuenta N°: " + numCuenta + " | Cliente: " + nombreCliente + " | Saldo: $" + saldoActual.toFixed(2) + " | Estado: <strong>" + estado + "</strong><br>");
+
+        numCuenta = parseInt(prompt("Ingrese número de cuenta (valor negativo para finalizar):"));
+      }
+
+      document.write("<br><strong>Suma total de saldos acreedores: $" + totalSaldosAcreedores.toFixed(2) + "</strong>");
+    } 
+    else if (opcion === 3) {
+      // Ejercicio 3: Censo provincial
+      var totalPersonas = 0;
+      var totalVarones = 0;
+      var totalMujeres = 0;
+      var varonesEdadTrabajo = 0;
+
+      var dni = parseInt(prompt("Ingrese número de documento (0 para finalizar):"));
+
+      while (dni !== 0) {
+        var edad = parseInt(prompt("Ingrese la edad:"));
+        var sexo = prompt("Ingrese el sexo (masculino/femenino):");
+
+        if (sexo) {
+          sexo = sexo.toLowerCase();
+        }
+
+        totalPersonas++;
+
+        if (sexo === "masculino") {
+          totalVarones++;
+          if (edad >= 16 && edad <= 65) {
+            varonesEdadTrabajo++;
+          }
+        } else if (sexo === "femenino") {
+          totalMujeres++;
+        }
+
+        dni = parseInt(prompt("Ingrese número de documento (0 para finalizar):"));
+      }
+
+      document.write("<h3>Resultados del Censo Provincial</h3>");
+      document.write("a) Cantidad total de personas censadas: " + totalPersonas + "<br>");
+      document.write("b) Cantidad de varones: " + totalVarones + "<br>");
+      document.write("c) Cantidad de mujeres: " + totalMujeres + "<br>");
+      document.write("d) Cantidad de varones entre 16 y 65 años: " + varonesEdadTrabajo + "<br>");
+    } 
+    else {
+      document.write("Opción no válida. Recargue la página para intentar de nuevo.");
+    }
+  </script>
+  <script>
+    var opcion = parseInt(prompt(
+      "SELECCIONE EL EJERCICIO A EJECUTAR:\n\n" +
+      "1. Procesar 3 triángulos (base, altura, superficie y superficie > 12)\n" +
+      "2. Suma de los últimos 5 números ingresados (de 10)\n" +
+      "3. Tabla de multiplicar del 5 (del 5 al 50)\n" +
+      "4. Tabla de multiplicar configurable (12 primeros términos)\n" +
+      "5. Clasificar 4 triángulos por sus lados (equilátero, isósceles, escaleno)\n" +
+      "6. Conteo de puntos en los cuadrantes del plano artesiano\n" +
+      "7. Análisis de 10 enteros (negativos, positivos, múltiplos de 15, suma de pares)\n" +
+      "8. Promedio de edades por turnos de estudiantes (Mañana, Tarde, Noche)\n\n" +
+      "Ingrese el número del ejercicio:"
+    ));
+
+    if (opcion === 1) {
+      // Ejercicio 1: Superficie de 3 triángulos
+      var cantidadMayores12 = 0;
+      document.write("<h3>Ejercicio 1: Superficie de Triángulos</h3>");
+
+      for (var i = 1; i <= 3; i++) {
+        var base = parseFloat(prompt("Triángulo " + i + " - Ingrese la base:"));
+        var altura = parseFloat(prompt("Triángulo " + i + " - Ingrese la altura:"));
+        var superficie = (base * altura) / 2;
+
+        document.write("<strong>Triángulo " + i + ":</strong> Base = " + base + " | Altura = " + altura + " | Superficie = " + superficie + "<br>");
+
+        if (superficie > 12) {
+          cantidadMayores12++;
+        }
+      }
+
+      document.write("<br><strong>Cantidad de triángulos con superficie mayor a 12:</strong> " + cantidadMayores12);
+    } 
+    else if (opcion === 2) {
+      // Ejercicio 2: Suma de los últimos 5 números de 10
+      var sumaUltimos5 = 0;
+      document.write("<h3>Ejercicio 2: Suma de los últimos 5 valores</h3>");
+
+      for (var i = 1; i <= 10; i++) {
+        var numero = parseInt(prompt("Ingrese el número " + i + " de 10:"));
+        if (i > 5) {
+          sumaUltimos5 += numero;
+        }
+      }
+
+      document.write("<strong>La suma de los últimos 5 valores ingresados es:</strong> " + sumaUltimos5);
+    } 
+    else if (opcion === 3) {
+      // Ejercicio 3: Tabla del 5 (del 5 al 50)
+      document.write("<h3>Ejercicio 3: Tabla del 5</h3>");
+      
+      for (var i = 5; i <= 50; i += 5) {
+        document.write(i);
+        if (i < 50) {
+          document.write(" - ");
+        }
+      }
+    } 
+    else if (opcion === 4) {
+      // Ejercicio 4: Tabla de multiplicar configurable (1 a 10)
+      var valor = parseInt(prompt("Ingrese un valor entero del 1 al 10:"));
+
+      document.write("<h3>Ejercicio 4: Tabla del " + valor + "</h3>");
+
+      if (valor >= 1 && valor <= 10) {
+        for (var i = 1; i <= 12; i++) {
+          var termino = valor * i;
+          document.write(valor + " x " + i + " = " + termino + "<br>");
+        }
+      } else {
+        document.write("El valor ingresado no se encuentra en el rango de 1 a 10.");
+      }
+    } 
+    else if (opcion === 5) {
+      // Ejercicio 5: Tipo de triángulo por sus lados
+      var equilateros = 0;
+      var isosceles = 0;
+      var escalenos = 0;
+
+      document.write("<h3>Ejercicio 5: Clasificación de Triángulos</h3>");
+
+      for (var i = 1; i <= 4; i++) {
+        var lado1 = parseFloat(prompt("Triángulo " + i + " - Ingrese lado 1:"));
+        var lado2 = parseFloat(prompt("Triángulo " + i + " - Ingrese lado 2:"));
+        var lado3 = parseFloat(prompt("Triángulo " + i + " - Ingrese lado 3:"));
+        var tipo = "";
+
+        if (lado1 === lado2 && lado2 === lado3) {
+          tipo = "Equilátero";
+          equilateros++;
+        } else if (lado1 === lado2 || lado1 === lado3 || lado2 === lado3) {
+          tipo = "Isósceles";
+          isosceles++;
+        } else {
+          tipo = "Escaleno";
+          escalenos++;
+        }
+
+        document.write("Triángulo " + i + ": Lados (" + lado1 + ", " + lado2 + ", " + lado3 + ") -> <strong>" + tipo + "</strong><br>");
+      }
+
+      document.write("<br><strong>Resumen de tipos:</strong><br>");
+      document.write("Equiláteros: " + equilateros + "<br>");
+      document.write("Isósceles: " + isosceles + "<br>");
+      document.write("Escalenos: " + escalenos + "<br><br>");
+
+      // Determinar cuál es el de menor cantidad
+      if (equilateros < isosceles && equilateros < escalenos) {
+        document.write("<strong>El tipo de triángulo con menor cantidad es: Equilátero</strong>");
+      } else if (isosceles < escalenos && isosceles < equilateros) {
+        document.write("<strong>El tipo de triángulo con menor cantidad es: Isósceles</strong>");
+      } else if (escalenos < equilateros && escalenos < isosceles) {
+        document.write("<strong>El tipo de triángulo con menor cantidad es: Escaleno</strong>");
+      } else {
+        document.write("<strong>Hay un empate en la menor cantidad entre dos o más tipos de triángulos.</strong>");
+      }
+    } 
+    else if (opcion === 6) {
+      // Ejercicio 6: Puntos por cuadrante
+      var cantidadPuntos = parseInt(prompt("Ingrese la cantidad de puntos a procesar:"));
+
+      var c1 = 0, c2 = 0, c3 = 0, c4 = 0;
+
+      for (var i = 1; i <= cantidadPuntos; i++) {
+        var x = parseFloat(prompt("Punto " + i + " - Ingrese coordenada X:"));
+        var y = parseFloat(prompt("Punto " + i + " - Ingrese coordenada Y:"));
+
+        if (x > 0 && y > 0) {
+          c1++;
+        } else if (x < 0 && y > 0) {
+          c2++;
+        } else if (x < 0 && y < 0) {
+          c3++;
+        } else if (x > 0 && y < 0) {
+          c4++;
+        }
+      }
+
+      document.write("<h3>Ejercicio 6: Distribución de Puntos en Cuadrantes</h3>");
+      document.write("Puntos procesados: " + cantidadPuntos + "<br>");
+      document.write("Primer Cuadrante: " + c1 + "<br>");
+      document.write("Segundo Cuadrante: " + c2 + "<br>");
+      document.write("Tercer Cuadrante: " + c3 + "<br>");
+      document.write("Cuarto Cuadrante: " + c4 + "<br>");
+    } 
+    else if (opcion === 7) {
+      // Ejercicio 7: Análisis de 10 números
+      var negativos = 0;
+      var positivos = 0;
+      var multiplos15 = 0;
+      var sumaPares = 0;
+
+      for (var i = 1; i <= 10; i++) {
+        var num = parseInt(prompt("Ingrese el número entero " + i + " de 10:"));
+
+        if (num < 0) {
+          negativos++;
+        } else if (num > 0) {
+          positivos++;
+        }
+
+        if (num !== 0 && num % 15 === 0) {
+          multiplos15++;
+        }
+
+        if (num % 2 === 0) {
+          sumaPares += num;
+        }
+      }
+
+      document.write("<h3>Ejercicio 7: Análisis de 10 Valores Integros</h3>");
+      document.write("a) Cantidad de valores negativos: " + negativos + "<br>");
+      document.write("b) Cantidad de valores positivos: " + positivos + "<br>");
+      document.write("c) Cantidad de múltiplos de 15: " + multiplos15 + "<br>");
+      document.write("d) Valor acumulado de los números pares: " + sumaPares + "<br>");
+    } 
+    else if (opcion === 8) {
+      // Ejercicio 8: Promedio de edades por turno
+      var sumaManana = 0;
+      var sumaTarde = 0;
+      var sumaNoche = 0;
+
+      // Turno Mañana (5 estudiantes)
+      for (var i = 1; i <= 5; i++) {
+        var edad = parseInt(prompt("Turno Mañana - Ingrese edad del estudiante " + i + " (de 5):"));
+        sumaManana += edad;
+      }
+
+      // Turno Tarde (6 estudiantes)
+      for (var i = 1; i <= 6; i++) {
+        var edad = parseInt(prompt("Turno Tarde - Ingrese edad del estudiante " + i + " (de 6):"));
+        sumaTarde += edad;
+      }
+
+      // Turno Noche (11 estudiantes)
+      for (var i = 1; i <= 11; i++) {
+        var edad = parseInt(prompt("Turno Noche - Ingrese edad del estudiante " + i + " (de 11):"));
+        sumaNoche += edad;
+      }
+
+      var promManana = sumaManana / 5;
+      var promTarde = sumaTarde / 6;
+      var promNoche = sumaNoche / 11;
+
+      document.write("<h3>Ejercicio 8: Promedio de Edades por Turno</h3>");
+      document.write("Promedio Turno Mañana: " + promManana.toFixed(2) + "<br>");
+      document.write("Promedio Turno Tarde: " + promTarde.toFixed(2) + "<br>");
+      document.write("Promedio Turno Noche: " + promNoche.toFixed(2) + "<br><br>");
+
+      if (promManana > promTarde && promManana > promNoche) {
+        document.write("<strong>El turno con el promedio de edad mayor es: Turno Mañana</strong>");
+      } else if (promTarde > promNoche) {
+        document.write("<strong>El turno con el promedio de edad mayor es: Turno Tarde</strong>");
+      } else if (promNoche > promManana && promNoche > promTarde) {
+        document.write("<strong>El turno con el promedio de edad mayor es: Turno Noche</strong>");
+      } else {
+        document.write("<strong>Hay un empate entre dos o más turnos en el mayor promedio de edad.</strong>");
+      }
+    } 
+    else {
+      document.write("Opción no válida. Recargue la página para seleccionar de nuevo.");
+    }
+  </script>
+  <script>
+    function mostrarRango() {
+      var menor = parseInt(prompt("Ingrese el número menor:"));
+      var mayor = parseInt(prompt("Ingrese el número mayor:"));
+
+      if (menor < mayor) {
+        document.write("<h3>Serie del " + menor + " al " + mayor + ":</h3>");
+        
+        for (var i = menor; i <= mayor; i++) {
+          document.write(i + " ");
+        }
+      } else {
+        document.write("Error: El primer número debe ser estrictamente menor que el segundo.");
+      }
+    }
+
+    // Llamada a la función para ejecutarla
+    mostrarRango();
+  </script>
+  <script>
+    // Función 1: Recibe 3 enteros y muestra el menor
+    function mostrarMenor(v1, v2, v3) {
+      document.write("<h3>1. Mostrar el menor de los tres números</h3>");
+      
+      if (v1 < v2 && v1 < v3) {
+        document.write("El número menor es: " + v1 + "<br>");
+      } else if (v2 < v3) {
+        document.write("El número menor es: " + v2 + "<br>");
+      } else {
+        document.write("El número menor es: " + v3 + "<br>");
+      }
+    }
+
+    // Función 2: Recibe 3 enteros y los muestra ordenados de menor a mayor
+    function mostrarOrdenados(v1, v2, v3) {
+      document.write("<h3>2. Mostrar números ordenados de menor a mayor</h3>");
+
+      if (v1 <= v2 && v1 <= v3) {
+        if (v2 <= v3) {
+          document.write("Orden: " + v1 + " " + v2 + " " + v3 + "<br>");
+        } else {
+          document.write("Orden: " + v1 + " " + v3 + " " + v2 + "<br>");
+        }
+      } else if (v2 <= v1 && v2 <= v3) {
+        if (v1 <= v3) {
+          document.write("Orden: " + v2 + " " + v1 + " " + v3 + "<br>");
+        } else {
+          document.write("Orden: " + v2 + " " + v3 + " " + v1 + "<br>");
+        }
+      } else {
+        if (v1 <= v2) {
+          document.write("Orden: " + v3 + " " + v1 + " " + v2 + "<br>");
+        } else {
+          document.write("Orden: " + v3 + " " + v2 + " " + v1 + "<br>");
+        }
+      }
+    }
+
+    // --- Carga de datos y llamada a las funciones ---
+    var num1 = parseInt(prompt("Ingrese el primer entero:"));
+    var num2 = parseInt(prompt("Ingrese el segundo entero:"));
+    var num3 = parseInt(prompt("Ingrese el tercer entero:"));
+
+    document.write("Valores ingresados: " + num1 + ", " + num2 + ", " + num3 + "<br><hr>");
+
+    // Ejecutar ambas funciones
+    mostrarMenor(num1, num2, num3);
+    mostrarOrdenados(num1, num2, num3);
+  </script>
+  <script>
+    // 1. Función que retorna el mayor de tres enteros
+    function obtenerMayor(n1, n2, n3) {
+      if (n1 >= n2 && n1 >= n3) {
+        return n1;
+      } else if (n2 >= n3) {
+        return n2;
+      } else {
+        return n3;
+      }
+    }
+
+    // 2. Función que retorna el perímetro de un cuadrado
+    function calcularPerimetroCuadrado(lado) {
+      return lado * 4;
+    }
+
+    // 3. Función que retorna la cantidad de dígitos (hasta 5 dígitos)
+    function contarDigitos(numero) {
+      if (numero >= 1 && numero <= 9) {
+        return 1;
+      } else if (numero >= 10 && numero <= 99) {
+        return 2;
+      } else if (numero >= 100 && numero <= 999) {
+        return 3;
+      } else if (numero >= 1000 && numero <= 9999) {
+        return 4;
+      } else if (numero >= 10000 && numero <= 99999) {
+        return 5;
+      } else {
+        return -1; // Indica que el número está fuera del rango (1 a 99999)
+      }
+    }
+
+    // 4. Función que recibe tres enteros y retorna su promedio
+    function calcularPromedio(v1, v2, v3) {
+      return (v1 + v2 + v3) / 3;
+    }
+
+    // 5. Función que solicita 5 valores por teclado y retorna su suma
+    function solicitarYSumarCincoValores() {
+      var suma = 0;
+      for (var i = 1; i <= 5; i++) {
+        var valor = parseInt(prompt("Ingrese el valor " + i + " de 5:"));
+        suma += valor;
+      }
+      return suma;
+    }
+
+    // --- Menú para probar las funciones ---
+    var opcion = parseInt(prompt(
+      "SELECCIONE LA FUNCIÓN A EJECUTAR:\n\n" +
+      "1. Obtener el mayor de tres enteros\n" +
+      "2. Calcular el perímetro de un cuadrado\n" +
+      "3. Contar la cantidad de dígitos de un entero (hasta 5 dígitos)\n" +
+      "4. Calcular el promedio de tres enteros\n" +
+      "5. Solicitar 5 valores y retornar la suma\n\n" +
+      "Ingrese el número de la opción:"
+    ));
+
+    if (opcion === 1) {
+      var a = parseInt(prompt("Ingrese el primer entero:"));
+      var b = parseInt(prompt("Ingrese el segundo entero:"));
+      var c = parseInt(prompt("Ingrese el tercer entero:"));
+      var mayor = obtenerMayor(a, b, c);
+      document.write("<h3>Mayor de tres números</h3>");
+      document.write("Los números ingresados fueron: " + a + ", " + b + ", " + c + "<br>");
+      document.write("El número mayor es: <strong>" + mayor + "</strong>");
+    } 
+    else if (opcion === 2) {
+      var lado = parseFloat(prompt("Ingrese la medida del lado del cuadrado:"));
+      var perimetro = calcularPerimetroCuadrado(lado);
+      document.write("<h3>Perímetro de un Cuadrado</h3>");
+      document.write("Lado ingresado: " + lado + "<br>");
+      document.write("El perímetro es: <strong>" + perimetro + "</strong>");
+    } 
+    else if (opcion === 3) {
+      var num = parseInt(prompt("Ingrese un entero positivo de hasta 5 dígitos:"));
+      var digitos = contarDigitos(num);
+      document.write("<h3>Cantidad de Dígitos</h3>");
+      if (digitos !== -1) {
+        document.write("El número " + num + " tiene <strong>" + digitos + "</strong> dígito(s).");
+      } else {
+        document.write("El valor ingresado no está dentro del rango permitido (1 a 99999).");
+      }
+    } 
+    else if (opcion === 4) {
+      var n1 = parseInt(prompt("Ingrese el primer entero:"));
+      var n2 = parseInt(prompt("Ingrese el segundo entero:"));
+      var n3 = parseInt(prompt("Ingrese el tercer entero:"));
+      var promedio = calcularPromedio(n1, n2, n3);
+      document.write("<h3>Promedio de Tres Números</h3>");
+      document.write("Valores: " + n1 + ", " + n2 + ", " + n3 + "<br>");
+      document.write("El promedio es: <strong>" + promedio.toFixed(2) + "</strong>");
+    } 
+    else if (opcion === 5) {
+      document.write("<h3>Suma de 5 Valores Ingresados</h3>");
+      var sumaTotal = solicitarYSumarCincoValores();
+      document.write("La suma total de los 5 valores ingresados es: <strong>" + sumaTotal + "</strong>");
+    } 
+    else {
+      document.write("Opción no válida. Recargue la página para seleccionar nuevamente.");
+    }
+  </script>
+  
+</body>
+</html>
